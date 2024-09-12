@@ -10,6 +10,7 @@
     <meta content="Webflow" name="generator" />
     <link href="css/nextgen-6db4f2.webflow.da88ebe77.min.css"
         rel="stylesheet" type="text/css" />
+        <link rel="stylesheet" href="css/slider.css">
     <link href="https://fonts.googleapis.com" rel="preconnect" />
     <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin="anonymous" />
     <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js" type="text/javascript"></script>
@@ -251,7 +252,7 @@
             </div>
         </div>
     </div>
-    <div class="our_clients_sec wf-section">
+    <!-- <div class="our_clients_sec wf-section">
         <div class="container w-container">
             <h3 data-w-id="4eb18f92-dab4-8f99-5c68-a848687b5142" class="heading-5">Our Clients</h3>
             <div class="our_clients">
@@ -308,7 +309,27 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
+    <div class="container" style="margin-bottom: 50px; height: 300px;" >
+        <h2 style="margin-bottom: 50px;">Our  Clients</h2>
+         <section class="customer-logos slider">
+            <div class="slide"><img src="images/images.jfif"></div>
+            <div class="slide"><img src="images/62bd11f4d2734d7784f051ea_bfad7597c25d2966f113bf56beccb1e9.png"></div>
+            <div class="slide"><img src="images/62bd11f46c5315f2914c3fd5_53b34c581db585e2a5b221b3e1294c22.png"></div>
+            <div class="slide"><img src="images/62bd11f320b9428db8750cfe_43401dc08eda40e0945d8f21aef57525.png"></div>
+            <div class="slide" ><img  src="images/62bd11f359ab87b9f446747a_80132a92bfbdf7a9267aad977e5cf6d3.png"></div>
+            
+            <div class="slide"><img src="images/62bd11f3c165046c5600f8be_8d3cba8369d0b38091959c38910240b6.png"></div>
+            <div class="slide"><img src="images/62bd11f4049cb3acfbbc3f0b_2b4fd4639068b1a7cbfd16666ba4818a.png"></div>
+           
+            <div class="slide"><img  src="images/62bd11f46c5315ec8a4c3fd6_63d5e6d73b67e50734e7efe32c98560e.png"></div>
+            <div class="slide"><img  src="images/62bd11f4ec3f0e3eaad2f825_c621e0e32be8108926e7610fa84a1999.png"></div>
+            <div class="slide"><img  src="images/62bd11f430fd51dc5cf469d4_2cc5a6925ce908ee1016a9f75cee384c.png"></div>
+            <div class="slide"><img  src="images/62bd11f42b15ac01aa81a9f1_8bd639e65d69849290b8aff1b30af2f6.png"></div>
+            <div class="slide"><img  src="images/62bd11f41394393087dd2a7b_6712cace22558684f5d0804688b98818.png"></div>
+           
+         </section>
+      </div> 
     <div class="services_faq_sec wf-section">
         <div class="container w-container">
             <div>
@@ -561,6 +582,35 @@
         });
 
     </script>
+
+<script src="https://code.jquery.com/jquery-2.2.0.min.js" type="text/javascript"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<!-- <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"> -->
+<script>
+    $(document).ready(function(){
+    $('.customer-logos').slick({
+        slidesToShow: 4,
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 1500,
+        arrows: false,
+        dots: false,
+        pauseOnHover: false,
+        responsive: [{
+            breakpoint: 768,
+            settings: {
+                slidesToShow: 4
+            }
+        }, {
+            breakpoint: 520,
+            settings: {
+                slidesToShow: 3
+            }
+        }]
+    });
+});
+</script>
 </body>
 
 </html>
