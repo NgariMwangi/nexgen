@@ -10,7 +10,7 @@
   /* Center the images inside each slide using vertical-align */
   .slide {
     text-align: center; /* Horizontally center the image */
-    height: 150px; /* Set a fixed height for the slide */
+    height: 136px; /* Set a fixed height for the slide */
     line-height: 150px; /* Set line-height equal to height for vertical centering */
   }
   
