@@ -26,6 +26,7 @@
   .slick-slide {
     display: inline-block; /* Makes each slide inline to ensure they are on the same line */
     float: none; /* Remove the float to avoid breaking the row alignment */
+    margin-right: 20px;
   }
   
   .slick-track {
