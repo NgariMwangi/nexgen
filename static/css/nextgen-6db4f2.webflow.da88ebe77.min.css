@@ -5399,7 +5399,9 @@ textarea.w-select {
         left: 0;
         right: 0
     }
-
+.dropdown{
+    width: 100%;
+}
     .menu-wrapper-2 {
         width: 50px;
         height: 50px;
@@ -6211,7 +6213,9 @@ textarea.w-select {
 
     .nav_link {
         font-size: 22px;
-        line-height: 24px
+        line-height: 24px;
+        
+        padding-top:50px;
     }
 }
 

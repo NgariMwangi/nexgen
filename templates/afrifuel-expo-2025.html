@@ -1,0 +1,1327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nexgen at AfriFuel Expo 2025</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="/static/images/62c427d548eee1a333df99f7_favicon.png" rel="shortcut icon" type="image/x-icon" />
+    <link href="/static/images/webclip.png" rel="apple-touch-icon" />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+        
+        body {
+            background: #ffffff;
+            color: #05223F;
+            line-height: 1.6;
+            padding: 0;
+            overflow-x: hidden;
+            min-height: 100vh;
+        }
+        
+        /* Header styles */
+        .header_wrap {
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+            transition: all 0.4s ease;
+        }
+        
+        .container_max_width {
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .navigation {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+        
+        .brand-logo {
+            display: flex;
+            align-items: center;
+        }
+        
+        .brand-logo img {
+            height: 50px;
+        }
+        
+        .color_logo {
+            display: block;
+        }
+        
+        .white_logo {
+            display: none;
+        }
+        
+        .nav_menu {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav_link {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            margin: 0 15px;
+            position: relative;
+            transition: color 0.3s;
+        }
+        
+        .nav_link:hover {
+            color: #005EEB;
+        }
+        
+        .menu_toggle {
+            display: none;
+            cursor: pointer;
+            z-index: 1001;
+        }
+        
+        .top-2, .middle-2, .bot-2 {
+            width: 25px;
+            height: 3px;
+            background: #05223F;
+            margin: 4px 0;
+            transition: all 0.3s ease;
+        }
+        
+        /* Video Hero Section */
+        .video-hero {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .video-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+        
+        .video-container video {
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            object-fit: cover;
+        }
+        
+        .video-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(5, 34, 63, 0.3);
+            z-index: 2;
+        }
+        
+        .video-content {
+            position: relative;
+            z-index: 3;
+            text-align: center;
+            color: white;
+            padding: 0 20px;
+            max-width: 900px;
+            margin-top: 60px;
+        }
+        
+        .video-content h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            margin-bottom: 20px;
+            line-height: 1.2;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
+        
+        .video-content p {
+            font-size: 1.4rem;
+            max-width: 700px;
+            margin: 0 auto 30px;
+            font-weight: 400;
+            line-height: 1.6;
+        }
+        
+        .expo-highlight {
+            background: #005EEB;
+            color: white;
+            padding: 12px 30px;
+            border-radius: 30px;
+            display: inline-block;
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin: 20px 0;
+            box-shadow: 0 5px 15px rgba(0, 94, 235, 0.2);
+        }
+        
+        /* Main content container */
+        .container {
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 80px 20px;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: #005EEB;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+        
+        .section-title p {
+            font-size: 1.2rem;
+            color: #4a5568;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        /* Card grid */
+        .content-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+        
+        .card {
+            background: #ffffff;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            border: 1px solid #eaeaea;
+        }
+        
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 30px rgba(0, 94, 235, 0.15);
+        }
+        
+        .card-image {
+            height: 240px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.7s ease;
+        }
+        
+        .card:hover .card-image img {
+            transform: scale(1.05);
+        }
+        
+        .image-label {
+            position: absolute;
+            bottom: 15px;
+            right: 15px;
+            background: rgba(0, 94, 235, 0.85);
+            color: white;
+            padding: 6px 14px;
+            border-radius: 8px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+        }
+        
+        .card-content {
+            padding: 30px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .card h3 {
+            color: #005EEB;
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+            font-weight: 700;
+        }
+        
+        .card h3 i {
+            margin-right: 12px;
+            color: #005EEB;
+            background: rgba(0, 94, 235, 0.1);
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+        }
+        
+        .card p {
+            color: #4a5568;
+            margin-bottom: 25px;
+            flex-grow: 1;
+            font-size: 1.05rem;
+            line-height: 1.7;
+        }
+        
+        .card-footer {
+            display: flex;
+            justify-content: flex-end;
+            margin-top: 10px;
+        }
+        
+        .card-tag {
+            background: rgba(0, 94, 235, 0.1);
+            color: #005EEB;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            border: 1px solid rgba(0, 94, 235, 0.2);
+        }
+        
+        /* Carousel section */
+        .carousel-section {
+            background: #f8fafc;
+            border-radius: 20px;
+            padding: 40px 30px;
+            margin-bottom: 60px;
+            border: 1px solid #eaeaea;
+        }
+        
+        .carousel-container {
+            position: relative;
+            max-width: 1000px;
+            margin: 0 auto;
+            overflow: hidden;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        }
+        
+        .carousel {
+            display: flex;
+            transition: transform 0.6s ease;
+        }
+        
+        .carousel-item {
+            min-width: 100%;
+            position: relative;
+        }
+        
+        .carousel-item img {
+            width: 100%;
+            display: block;
+            height: 500px;
+            object-fit: cover;
+        }
+        
+        .carousel-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(5, 34, 63, 0.9), transparent);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+        
+        .carousel-caption h3 {
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+            color: #ffffff;
+            text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+        }
+        
+        .carousel-caption p {
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin: 0 auto;
+            color: #f0f8ff;
+        }
+        
+        .carousel-controls {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            transform: translateY(-50%);
+            padding: 0 25px;
+            z-index: 10;
+        }
+        
+        .carousel-btn {
+            background: rgba(255, 255, 255, 0.85);
+            border: none;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            font-size: 1.4rem;
+            color: #005EEB;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+        }
+        
+        .carousel-btn:hover {
+            background: #ffffff;
+            transform: scale(1.1);
+            color: #005EEB;
+        }
+        
+        .carousel-indicators {
+            display: flex;
+            justify-content: center;
+            padding: 20px 0 10px;
+        }
+        
+        .indicator {
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: rgba(176, 196, 222, 0.5);
+            margin: 0 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .indicator:hover {
+            background: rgba(0, 94, 235, 0.7);
+            transform: scale(1.2);
+        }
+        
+        .indicator.active {
+            background: #005EEB;
+            transform: scale(1.2);
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            text-align: center;
+            padding: 80px 30px;
+            background: linear-gradient(135deg, #005EEB, #05223F);
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .cta-section::before {
+            content: "";
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 70%);
+            transform: rotate(30deg);
+            z-index: 0;
+        }
+        
+        .cta-section h3 {
+            color: #ffffff;
+            font-size: 2.2rem;
+            margin-bottom: 25px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .cta-section p {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1.15rem;
+            max-width: 700px;
+            margin: 0 auto 35px;
+            line-height: 1.8;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .contact-btn {
+            display: inline-block;
+            background: #ffffff;
+            color: #005EEB;
+            padding: 16px 45px;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            font-weight: 700;
+            text-decoration: none;
+            transition: all 0.4s ease;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+            position: relative;
+            overflow: hidden;
+            border: none;
+            cursor: pointer;
+            z-index: 1;
+        }
+        
+        .contact-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+            background: #f8fafc;
+        }
+        
+        .contact-btn:active {
+            transform: translateY(0);
+        }
+        
+        .contact-btn::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -60%;
+            width: 40px;
+            height: 200%;
+            background: rgba(255, 255, 255, 0.3);
+            transform: rotate(25deg);
+            transition: all 0.6s;
+            z-index: -1;
+        }
+        
+        .contact-btn:hover::after {
+            left: 120%;
+        }
+        
+        /* Fixed Footer Styles */
+        .footer {
+            background: #05223F;
+            color: #ffffff;
+            padding: 60px 0 30px;
+        }
+        
+        .footer .container {
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .footer_list {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .heading-26 {
+            font-size: 1.8rem;
+            margin-bottom: 30px;
+            color: #ffffff;
+        }
+        
+        .grid-6 {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .country-name {
+            margin-bottom: 20px;
+        }
+        
+        .heading-25 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: #ffffff;
+        }
+        
+        .text-block-10 {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 1rem;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+        
+        .phone-number {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        
+        .text-block-11 {
+            font-weight: bold;
+            margin-right: 10px;
+            color: #ffffff;
+        }
+        
+        .text-block-12 {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 1rem;
+        }
+        
+        .contact-socal {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .footer_contact {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .link-block-4 {
+            margin-bottom: 15px;
+        }
+        
+        .text-block-2 {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 1rem;
+            margin-bottom: 15px;
+        }
+        
+        .link-3 {
+            color: #005EEB;
+            text-decoration: none;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+        
+        .footer_socal_icon {
+            display: flex;
+            gap: 15px;
+            margin-top: 10px;
+        }
+        
+        .copyright {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            margin-top: 30px;
+        }
+        
+        .footer_logo {
+            flex-shrink: 0;
+        }
+        
+        .footer_logo img {
+            height: 40px;
+        }
+        
+        .text-block-4 {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.9rem;
+        }
+        
+        /* Dropdown styles */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+        
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+        
+        .dropdown-content a {
+            color: rgb(55,129,239) !important;
+            padding: 12px 16px !important;
+            text-decoration: none !important;
+            display: block !important;
+            font-weight: 700;
+        }
+        
+        .dropdown-content a:hover {
+            background-color: #f1f1f1;
+        }
+        
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+        
+        /* Mobile menu styles */
+        .w-nav-overlay {
+            position: fixed;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 999;
+            display: none;
+        }
+        
+        .w-nav-overlay nav.w-nav-menu {
+            top: 0;
+            width: 100%;
+            height: 100vh;
+            display: flex !important;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: fixed;
+        }
+        
+        .w-nav-overlay .nav_link {
+            color: white !important;
+            font-size: 1.5rem;
+            margin: 15px 0;
+        }
+        
+        .w-nav-overlay .dropdown-content {
+            position: static;
+            display: none;
+            background: transparent;
+            box-shadow: none;
+        }
+        
+        .w-nav-overlay .dropdown:hover .dropdown-content {
+            display: block;
+        }
+        
+        .w-nav-overlay .dropdown-content a {
+            color: #fff !important;
+            text-align: center;
+        }
+        
+        /* Responsive design */
+        @media (max-width: 992px) {
+            .video-content h1 {
+                font-size: 2.8rem;
+            }
+            
+            .video-content p {
+                font-size: 1.2rem;
+            }
+            
+            .carousel-item img {
+                height: 420px;
+            }
+            
+            .nav_menu {
+                display: none;
+            }
+            
+            .menu_toggle {
+                display: block;
+            }
+            
+            .grid-6 {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .video-hero {
+                height: 70vh;
+            }
+            
+            .video-content h1 {
+                font-size: 2.2rem;
+            }
+            
+            .video-content p {
+                font-size: 1.1rem;
+            }
+            
+            .expo-highlight {
+                font-size: 1.1rem;
+                padding: 10px 25px;
+            }
+            
+            .container {
+                padding: 60px 15px;
+            }
+            
+            .content-grid {
+                gap: 20px;
+            }
+            
+            .card-image {
+                height: 200px;
+            }
+            
+            .card-content {
+                padding: 25px;
+            }
+            
+            .card h3 {
+                font-size: 1.3rem;
+            }
+            
+            .carousel-section {
+                padding: 30px 20px;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+            
+            .section-title p {
+                font-size: 1.1rem;
+            }
+            
+            .carousel-item img {
+                height: 320px;
+            }
+            
+            .carousel-caption {
+                padding: 20px;
+            }
+            
+            .carousel-caption h3 {
+                font-size: 1.5rem;
+            }
+            
+            .carousel-caption p {
+                font-size: 1rem;
+            }
+            
+            .carousel-btn {
+                width: 40px;
+                height: 40px;
+                font-size: 1.2rem;
+            }
+            
+            .cta-section {
+                padding: 60px 20px;
+            }
+            
+            .cta-section h3 {
+                font-size: 1.8rem;
+            }
+            
+            .cta-section p {
+                font-size: 1.05rem;
+            }
+            
+            .contact-btn {
+                padding: 14px 35px;
+                font-size: 1.05rem;
+            }
+            
+            .grid-6 {
+                grid-template-columns: 1fr;
+            }
+            
+            .copyright {
+                flex-direction: column;
+                gap: 20px;
+                text-align: center;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .video-hero {
+                height: 60vh;
+            }
+            
+            .video-content h1 {
+                font-size: 1.9rem;
+            }
+            
+            .expo-highlight {
+                font-size: 1rem;
+            }
+            
+            .carousel-item img {
+                height: 260px;
+            }
+            
+            .carousel-caption h3 {
+                font-size: 1.3rem;
+            }
+            
+            .cta-section h3 {
+                font-size: 1.6rem;
+            }
+        }
+    </style>
+    
+</head>
+<body>
+    <!-- Header -->
+    <div data-animation="default" data-collapse="medium" data-duration="400" data-easing="ease" data-easing2="ease"
+        role="banner" class="header_wrap w-nav">
+        <div class=" container_max_width w-container">
+            <div class="navigation">
+                <a href="/" class="brand-logo w-nav-brand">
+                    <img src="/static/images/6273c5ce6f0d4f9d3ceced20_site_logo.svg" loading="lazy" alt="" class="color_logo" />
+                    <img src="/static/images/6274baba21a8e40ec35a9a73_white_site_logo.svg" loading="lazy" alt="" class="white_logo" />
+                </a>
+                <nav role="navigation" class="nav_menu w-nav-menu">
+                    <a href="/products" class="nav_link w-nav-link">Products</a>
+                    
+                    <!-- Dropdown for Services -->
+                    <div class="dropdown">
+                        <a href="javascript:void(0)" class="nav_link w-nav-link dropdown-toggle">Services</a>
+                        <div class="dropdown-content">
+                            <a href="/fuelrelated">Fuel Related</a>
+                            <a href="/nonfuelrelated">Non Fuel Related</a>
+                            <a href="/solarsystems">Solar Systems</a>
+                        </div>
+                    </div>
+                    
+                    <a href="/about" class="nav_link w-nav-link">About us</a>
+                    <a href="/gallery" class="nav_link w-nav-link">Gallery</a>
+                    <a href="/contact" class="nav_link w-nav-link">Contact us</a>
+                    <div class="dropdown">
+                        <a href="javascript:void(0)" class="nav_link w-nav-link dropdown-toggle">Advertisements</a>
+                        <div class="dropdown-content">
+                            <a href="/tenders">Tenders</a>
+                            <a href="/afrifuel-expo-2025">Afri Fuel Expo</a>
+                        </div>
+                    </div>
+                </nav>
+                <div class="menu_toggle menu-btn w-nav-button">
+                    <div class="menu-wrapper-2">
+                        <div class="top-2"></div>
+                        <div class="middle-2"></div>
+                        <div class="bot-2"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Video Hero Section -->
+    <section class="video-hero">
+        <div class="video-container">
+            <video autoplay muted loop playsinline>
+                <source src="https://res.cloudinary.com/dxyewzvnr/video/upload/v1750238019/nexgen/IMG_4631_1_2_1_cf99td.mov" type="video/mp4">
+                
+                Your browser does not support the video tag.
+            </video>
+        </div>
+        <div class="video-overlay"></div>
+        <div class="video-content">
+            <h1>Nexgen at AfriFuel Expo 2025</h1>
+            <p>Showcasing the future of retail fuel with innovative, sustainable solutions</p>
+            <div class="expo-highlight">
+                Sarit Centre, Nairobi
+            </div>
+        </div>
+    </section>
+    <!-- Add after the video hero section and before the main container -->
+<section class="expo-description">
+    <div class="container">
+        <div class="section-title">
+            <h2>Nexgen at AfriFuel Expo 2025</h2>
+            <p>Our participation in Africa's premier fueling technology event</p>
+        </div>
+        <div class="expo-content">
+            <p>Nexgen Fuel Works was pleased to participate in this year's AfriFueling Expo, which was hosted at the Sarit Centre and brought together professionals in the industry to present and discuss the newest developments in fuelling technology. Our team demonstrated our comprehensive maintenance and technical solutions designed for the contemporary forecourt to clients, prospects, and other specialists.</p>
+            
+            <p>Visitors got a personal look at our ProGauge fuel management systems, state-of-the-art automation solutions, and cutting-edge forecourt technologies at our interactive booth. Our professionals were available to answer questions, give live demonstrations, and create deep relationships around smarter fuel infrastructure.</p>
+            
+            <p>Nexgen's participation in the AfriFueling Expo demonstrates its dedication to promoting quality and dependability in fuel management throughout East Africa.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Add this CSS to the style section -->
+<style>
+    .expo-description {
+        background: #c3c5c7;
+        padding: 80px 0;
+        border-top: 1px solid #eaeaea;
+        border-bottom: 1px solid #eaeaea;
+    }
+    
+    .expo-content {
+        max-width: 800px;
+        margin: 0 auto;
+        font-size: 1.1rem;
+        line-height: 1.8;
+        color: #000;
+    }
+    
+    .expo-content p {
+        margin-bottom: 25px;
+    }
+    
+    @media (max-width: 768px) {
+        .expo-description {
+            padding: 60px 0;
+        }
+        
+        .expo-content {
+            padding: 0 20px;
+            font-size: 1.05rem;
+        }
+    }
+</style>
+
+    <!-- Main Content -->
+    <div class="container">
+        <div class="section-title">
+            <h2>Expo Highlights</h2>
+            <p>Discover how Nexgen is transforming the fuel industry with cutting-edge solutions</p>
+        </div>
+        
+        <div class="content-grid">
+            <div class="card">
+                <div class="card-image">
+                    <img src="https://res.cloudinary.com/dxyewzvnr/image/upload/v1750202582/nexgen/visionShowcase_mdbvmq.jpg" alt="Vision Presentation">
+                    <div class="image-label">Vision Presentation</div>
+                </div>
+                <div class="card-content">
+                    <h3><i class="fas fa-video"></i> Vision Presentation</h3>
+                    <p>At AfriFuel Expo 2025, Nexgen presented its vision for the future of retail fuel. We demonstrated how our innovative solutions set new benchmarks for efficiency, reliability, and sustainability.</p>
+                    <div class="card-footer">
+                        <div class="card-tag">Keynote Session</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="card-image">
+                    <img src="https://res.cloudinary.com/dxyewzvnr/image/upload/v1750202167/nexgen/industry-engagement_v3c0xp.jpg" alt="Industry Connections">
+                    <div class="image-label">Industry Engagement</div>
+                </div>
+                <div class="card-content">
+                    <h3><i class="fas fa-handshake"></i> Industry Engagement</h3>
+                    <p>The Expo was a great opportunity for Nexgen to connect with industry professionals. We engaged in valuable discussions and reaffirmed our commitment to being a reliable partner.</p>
+                    <div class="card-footer">
+                        <div class="card-tag">Networking</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="card-image">
+                    <img src="https://res.cloudinary.com/dxyewzvnr/image/upload/v1750202363/nexgen/industry-professional_ozcugm.jpg" alt="Advanced Technologies">
+                    <div class="image-label">Innovation Showcase</div>
+                </div>
+                <div class="card-content">
+                    <h3><i class="fas fa-lightbulb"></i> Innovation Showcase</h3>
+                    <p>Nexgen was at the forefront of innovation at AfriFuel Expo 2025. We presented our latest advancements in retail fuel technology and sustainable solutions.</p>
+                    <div class="card-footer">
+                        <div class="card-tag">Technology</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Carousel Section -->
+        <div class="section-title">
+            <h2>Expo Moments</h2>
+            <p>Capturing the highlights of our participation at AfriFuel Expo 2025</p>
+        </div>
+        
+        <div class="carousel-section">
+            <div class="carousel-container">
+                <div class="carousel">
+                    <div class="carousel-item">
+                        <img src="https://res.cloudinary.com/dxyewzvnr/image/upload/v1750203066/nexgen/Technologydemonstration_1_ujozxu.jpg" alt="Technology Demonstrations">
+                        <div class="carousel-caption">
+                            <h3>Technology Demonstrations</h3>
+                            <p>Nexgen presented our advanced fuel technologies to industry leaders and potential partners</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="https://res.cloudinary.com/dxyewzvnr/image/upload/v1750203249/nexgen/networking_1_whu0d5.jpg" alt="Networking Opportunities">
+                        <div class="carousel-caption">
+                            <h3>Networking Opportunities</h3>
+                            <p>Engaging with professionals from across the fuel industry to build strategic partnerships</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="https://res.cloudinary.com/dxyewzvnr/image/upload/v1750203438/nexgen/innovation2_cz6jje.jpg" alt="Innovation Showcase">
+                        <div class="carousel-caption">
+                            <h3>Innovation Showcase</h3>
+                            <p>Demonstrating our commitment to sustainable fuel solutions and infrastructure development</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="https://res.cloudinary.com/dxyewzvnr/image/upload/v1750203439/nexgen/innovation1_f3riqh.jpg" alt="Innovation Showcase">
+                        <div class="carousel-caption">
+                            <h3>Innovation Showcase</h3>
+                            <p>Demonstrating our commitment to sustainable fuel solutions and infrastructure development</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="carousel-controls">
+                    <button class="carousel-btn prev-btn"><i class="fas fa-chevron-left"></i></button>
+                    <button class="carousel-btn next-btn"><i class="fas fa-chevron-right"></i></button>
+                </div>
+                
+                <div class="carousel-indicators">
+                    <div class="indicator active" data-index="0"></div>
+                    <div class="indicator" data-index="1"></div>
+                    <div class="indicator" data-index="2"></div>
+                    <div class="indicator" data-index="3"></div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- CTA Section -->
+        <div class="cta-section">
+            <h3>Transform Your Fuel Business with Nexgen</h3>
+            <p>Nexgen showcased its comprehensive suite of retail fuel solutions at the AfriFuel Expo 2025. Our team engaged with industry leaders, demonstrating our commitment to innovation and reliability in the fuel sector.</p>
+            <a href="/contact" class="contact-btn">Contact Our Experts</a>
+        </div>
+    </div>
+    
+    <!-- Fixed Footer -->
+    <div class="footer">
+        <div class="container">
+            <div class="footer_list">
+                <h3 class="heading-26">Contact us</h3>
+                <div class="grid-6">
+                    <div class="country-name">
+                        <h3 class="heading-25">Kenya</h3>
+                        <div class="text-block-10">Cape Business Park <br />Godown 10 Exit 11<br />Junction of Thika Highway and Eastern Bypass,
+                            <br />Ruiru, Kenya.</div>
+                        <div class="phone-number">
+                            <div class="text-block-11">P</div>
+                            <div class="text-block-12"> +254 720 631 535</div>
+                        </div>
+                    </div>
+                    <div class="country-name">
+                        <h3 class="heading-25">Tanzania</h3>
+                        <div class="text-block-10">Sophia House<br />Plot no. 74/3 Nyerere Road<br />Ilala District, Dar
+                            es Salaam<br />Tanzania</div>
+                        <div class="phone-number">
+                            <div class="text-block-11">P</div>
+                            <div class="text-block-12">+255 742 202 128</div>
+                        </div>
+                    </div>
+                    <div class="country-name">
+                        <h3 class="heading-25">Uganda</h3>
+                        <div class="text-block-10">Luzira Business Park- C4<br />Kyadondo block 243 plot
+                            2490<br />Luzira Nakawa division<br />Kampala, Uganda</div>
+                        <div class="phone-number">
+                            <div class="text-block-11">P</div>
+                            <div class="text-block-12">+256 760 991 671</div>
+                        </div>
+                    </div>
+                    <div class="contact-socal">
+                        <div class="footer_contact">
+                            <a href="mailto:info@nexgenfuelworks.com" class="link-block-4">
+                                <div class="text-block-2">info@nexgenfuelworks.com</div>
+                            </a>
+                           
+                         
+                        </div>
+                    </div>
+                </div>
+                <div class="copyright">
+                    <div class="footer_logo">
+                        <a href="/">
+                            <img src="https://res.cloudinary.com/dxyewzvnr/image/upload/v1725625590/nextgen/6273ec5dcd783d6f57ba7032_footer_logo.svg" loading="lazy" alt="" />
+                        </a>
+                    </div>
+                    <div class="text-block-4">All rights reserved Nexgen Pty Ltd 2022</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Carousel functionality
+            const carousel = document.querySelector('.carousel');
+            const items = document.querySelectorAll('.carousel-item');
+            const indicators = document.querySelectorAll('.indicator');
+            const prevBtn = document.querySelector('.prev-btn');
+            const nextBtn = document.querySelector('.next-btn');
+            let currentIndex = 0;
+            const itemCount = items.length;
+            let autoSlideInterval;
+            
+            function updateCarousel() {
+                carousel.style.transform = `translateX(-${currentIndex * 100}%)`;
+                
+                // Update indicators
+                indicators.forEach((indicator, index) => {
+                    if (index === currentIndex) {
+                        indicator.classList.add('active');
+                    } else {
+                        indicator.classList.remove('active');
+                    }
+                });
+            }
+            
+            // Next button
+            nextBtn.addEventListener('click', () => {
+                currentIndex = (currentIndex + 1) % itemCount;
+                updateCarousel();
+                resetAutoSlide();
+            });
+            
+            // Previous button
+            prevBtn.addEventListener('click', () => {
+                currentIndex = (currentIndex - 1 + itemCount) % itemCount;
+                updateCarousel();
+                resetAutoSlide();
+            });
+            
+            // Indicator clicks
+            indicators.forEach(indicator => {
+                indicator.addEventListener('click', () => {
+                    currentIndex = parseInt(indicator.getAttribute('data-index'));
+                    updateCarousel();
+                    resetAutoSlide();
+                });
+            });
+            
+            // Auto-advance every 7 seconds
+            function startAutoSlide() {
+                autoSlideInterval = setInterval(() => {
+                    currentIndex = (currentIndex + 1) % itemCount;
+                    updateCarousel();
+                }, 7000);
+            }
+            
+            function resetAutoSlide() {
+                clearInterval(autoSlideInterval);
+                startAutoSlide();
+            }
+            
+            startAutoSlide();
+            
+            // Pause auto-slide when hovering over carousel
+            const carouselContainer = document.querySelector('.carousel-container');
+            carouselContainer.addEventListener('mouseenter', () => {
+                clearInterval(autoSlideInterval);
+            });
+            
+            carouselContainer.addEventListener('mouseleave', () => {
+                startAutoSlide();
+            });
+            
+            // Video play/pause on visibility change
+            document.addEventListener('visibilitychange', function() {
+                const video = document.querySelector('.video-container video');
+                if (document.visibilityState === 'hidden') {
+                    video.pause();
+                } else {
+                    video.play();
+                }
+            });
+            
+            // Mobile menu toggle
+            const menuToggle = document.querySelector('.menu_toggle');
+            const navMenu = document.querySelector('.nav_menu');
+            
+            menuToggle.addEventListener('click', function() {
+                document.body.classList.toggle('fixed_header');
+                document.querySelector('.w-nav-overlay').style.display = 
+                    document.querySelector('.w-nav-overlay').style.display === 'block' ? 'none' : 'block';
+            });
+            
+            // Create overlay for mobile menu
+            const overlay = document.createElement('div');
+            overlay.className = 'w-nav-overlay';
+            overlay.style.display = 'none';
+            
+            const mobileMenu = document.createElement('nav');
+            mobileMenu.className = 'w-nav-menu';
+            mobileMenu.innerHTML = document.querySelector('.nav_menu').innerHTML;
+            overlay.appendChild(mobileMenu);
+            document.body.appendChild(overlay);
+            
+            // Close mobile menu when clicking outside
+            overlay.addEventListener('click', function(e) {
+                if (e.target === overlay) {
+                    overlay.style.display = 'none';
+                    document.body.classList.remove('fixed_header');
+                }
+            });
+            
+            // Dropdown functionality
+            const dropdownToggles = document.querySelectorAll('.dropdown-toggle');
+            
+            dropdownToggles.forEach(toggle => {
+                toggle.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const dropdown = this.nextElementSibling;
+                    dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
+                    
+                    // Close other dropdowns
+                    document.querySelectorAll('.dropdown-content').forEach(dd => {
+                        if (dd !== dropdown) dd.style.display = 'none';
+                    });
+                });
+            });
+            
+            // Close dropdowns when clicking outside
+            document.addEventListener('click', function(e) {
+                if (!e.target.matches('.dropdown-toggle')) {
+                    document.querySelectorAll('.dropdown-content').forEach(dd => {
+                        dd.style.display = 'none';
+                    });
+                }
+            });
+            
+            // Logo switching based on scroll position
+            window.addEventListener('scroll', function() {
+                const header = document.querySelector('.header_wrap');
+                const colorLogo = document.querySelector('.color_logo');
+                const whiteLogo = document.querySelector('.white_logo');
+                const navLinks = document.querySelectorAll('.nav_link');
+                
+                if (window.scrollY > 100) {
+                    header.style.background = '#05223F';
+                    header.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
+                    colorLogo.style.display = 'block';
+                    whiteLogo.style.display = 'none';
+                    
+                    // Change link colors for better visibility
+                    navLinks.forEach(link => {
+                        link.style.color = 'white';
+                    });
+                } else {
+                    header.style.background = 'transparent';
+                    header.style.boxShadow = 'none';
+                    colorLogo.style.display = 'none';
+                    whiteLogo.style.display = 'block';
+                    
+                    // Reset link colors
+                    navLinks.forEach(link => {
+                        link.style.color = 'white';
+                    });
+                }
+            });
+            
+            // Initialize logo state
+            const colorLogo = document.querySelector('.color_logo');
+            const whiteLogo = document.querySelector('.white_logo');
+            colorLogo.style.display = 'none';
+            whiteLogo.style.display = 'block';
+        });
+    </script>
+</body>
+</html>
