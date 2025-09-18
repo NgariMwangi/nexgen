@@ -256,10 +256,191 @@
         .dropdown-content a:hover {
             background-color: #f1f1f1;
         }
+
+/* Popup Modal Styles */
+.popup-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 10000;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+.popup-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 94, 235, 0.15);
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(0, 94, 235, 0.3);
+    border-radius: 15px;
+    padding: 30px;
+    width: 98%;
+    height: 98%;
+    max-width: 1400px;
+    max-height: 900px;
+    overflow-y: auto;
+    box-shadow: 0 15px 40px rgba(0, 94, 235, 0.2);
+    animation: slideIn 0.3s ease-in-out;
+}
+
+.popup-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+    padding: 15px 20px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    border: 1px solid rgba(0, 94, 235, 0.4);
+    box-shadow: 0 4px 15px rgba(0, 94, 235, 0.1);
+}
+
+.popup-title {
+    font-size: 32px;
+    font-weight: 600;
+    color: #005EEB;
+    margin: 0;
+}
+
+.popup-close {
+    background: #ff4444;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.2s;
+}
+
+.popup-close:hover {
+    background: #cc0000;
+}
+
+.popup-images {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: flex-start;
+}
+
+.popup-image {
+    flex: 1;
+    min-width: 300px;
+    max-width: 450px;
+    min-height: 500px;
+    max-height: 700px;
+    height: auto;
+    object-fit: contain;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 10px;
+    border: 2px solid rgba(0, 94, 235, 0.2);
+    box-shadow: 0 8px 25px rgba(0, 94, 235, 0.15);
+    transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+}
+
+.popup-image:hover {
+    transform: scale(1.03);
+    border-color: rgba(0, 94, 235, 0.5);
+    box-shadow: 0 12px 35px rgba(0, 94, 235, 0.3);
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideIn {
+    from { 
+        opacity: 0;
+        transform: translate(-50%, -60%);
+    }
+    to { 
+        opacity: 1;
+        transform: translate(-50%, -50%);
+    }
+}
+
+@media (max-width: 768px) {
+    .popup-images {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+    
+    .popup-image {
+        min-width: 320px;
+        max-width: 95%;
+        width: 100%;
+        min-height: 400px;
+        max-height: 600px;
+    }
+    
+    .popup-container {
+        padding: 20px;
+        margin: 5px;
+        width: 98%;
+        height: 98%;
+        max-width: 100%;
+        max-height: 100%;
+    }
+    
+    .popup-title {
+        font-size: 28px;
+    }
+}
+
+@media (max-width: 480px) {
+    .popup-image {
+        min-width: 280px;
+        max-width: 98%;
+        min-height: 350px;
+        max-height: 500px;
+    }
+    
+    .popup-container {
+        padding: 15px;
+        margin: 2px;
+        width: 99%;
+        height: 99%;
+    }
+    
+    .popup-title {
+        font-size: 24px;
+    }
+}
     </style>
 </head>
 
 <body>
+    <!-- Popup Modal -->
+    <div id="popup-overlay" class="popup-overlay">
+        <div class="popup-container">
+            <div class="popup-header">
+                <h2 class="popup-title">Latest Updates</h2>
+                <button id="popup-close" class="popup-close" title="Close">&times;</button>
+            </div>
+            <div class="popup-images">
+                <img src="/static/pop up images/ad 1.png" alt="Advertisement 1" class="popup-image">
+                <img src="/static/pop up images/ad 2.png" alt="Advertisement 2" class="popup-image">
+                <img src="/static/pop up images/ad 3.png" alt="Advertisement 3" class="popup-image">
+            </div>
+        </div>
+    </div>
+
     <div data-animation="default" data-collapse="medium" data-duration="400" data-easing="ease" data-easing2="ease"
         role="banner" class="header_wrap w-nav">
         <div class="container container_max_width w-container">
@@ -1523,6 +1704,38 @@
             window.addEventListener('click', function (event) {
                 if (!event.target.matches('.dropdown-toggle')) {
                     dropdownContent.style.display = 'none';
+                }
+            });
+        });
+    </script>
+    
+    <!-- Popup JavaScript -->
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', function() {
+            const popupOverlay = document.getElementById('popup-overlay');
+            const popupClose = document.getElementById('popup-close');
+            
+            // Show popup after 2 seconds
+            setTimeout(function() {
+                popupOverlay.style.display = 'block';
+            }, 2000);
+            
+            // Close popup when close button is clicked
+            popupClose.addEventListener('click', function() {
+                popupOverlay.style.display = 'none';
+            });
+            
+            // Close popup when clicking outside the popup container
+            popupOverlay.addEventListener('click', function(event) {
+                if (event.target === popupOverlay) {
+                    popupOverlay.style.display = 'none';
+                }
+            });
+            
+            // Close popup when pressing Escape key
+            document.addEventListener('keydown', function(event) {
+                if (event.key === 'Escape' && popupOverlay.style.display === 'block') {
+                    popupOverlay.style.display = 'none';
                 }
             });
         });
