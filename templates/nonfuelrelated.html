@@ -684,7 +684,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: transparent;
     z-index: 10000;
     animation: fadeIn 0.3s ease-in-out;
 }
@@ -698,12 +698,10 @@
     backdrop-filter: blur(10px);
     border: 2px solid rgba(0, 94, 235, 0.3);
     border-radius: 15px;
-    padding: 30px;
-    width: 98%;
-    height: 98%;
-    max-width: 1400px;
-    max-height: 900px;
-    overflow-y: auto;
+    padding: 25px;
+    width: 500px;
+    height: 650px;
+    overflow: hidden;
     box-shadow: 0 15px 40px rgba(0, 94, 235, 0.2);
     animation: slideIn 0.3s ease-in-out;
 }
@@ -712,16 +710,16 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 25px;
-    padding: 15px 20px;
+    margin-bottom: 15px;
+    padding: 10px 15px;
     background: rgba(255, 255, 255, 0.9);
-    border-radius: 10px;
+    border-radius: 8px;
     border: 1px solid rgba(0, 94, 235, 0.4);
-    box-shadow: 0 4px 15px rgba(0, 94, 235, 0.1);
+    box-shadow: 0 2px 10px rgba(0, 94, 235, 0.1);
 }
 
 .popup-title {
-    font-size: 32px;
+    font-size: 24px;
     font-weight: 600;
     color: #005EEB;
     margin: 0;
@@ -732,10 +730,10 @@
     color: white;
     border: none;
     border-radius: 50%;
-    width: 30px;
-    height: 30px;
+    width: 25px;
+    height: 25px;
     cursor: pointer;
-    font-size: 18px;
+    font-size: 14px;
     font-weight: bold;
     display: flex;
     align-items: center;
@@ -748,33 +746,53 @@
 }
 
 .popup-images {
-    display: flex;
-    gap: 30px;
-    justify-content: center;
-    flex-wrap: wrap;
-    align-items: flex-start;
+    position: relative;
+    width: 100%;
+    height: 520px;
+    overflow: hidden;
+    border-radius: 10px;
 }
 
 .popup-image {
-    flex: 1;
-    min-width: 300px;
-    max-width: 450px;
-    min-height: 500px;
-    max-height: 700px;
-    height: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     object-fit: contain;
-    border-radius: 12px;
+    border-radius: 8px;
     background: rgba(255, 255, 255, 0.95);
     padding: 10px;
     border: 2px solid rgba(0, 94, 235, 0.2);
-    box-shadow: 0 8px 25px rgba(0, 94, 235, 0.15);
-    transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+    box-shadow: 0 4px 15px rgba(0, 94, 235, 0.1);
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out, border 0.3s ease;
+    box-sizing: border-box;
+    cursor: pointer;
 }
 
-.popup-image:hover {
-    transform: scale(1.03);
-    border-color: rgba(0, 94, 235, 0.5);
-    box-shadow: 0 12px 35px rgba(0, 94, 235, 0.3);
+.popup-image.active {
+    opacity: 1;
+}
+
+.popup-indicators {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 15px;
+}
+
+.popup-indicator {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: rgba(0, 94, 235, 0.3);
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.popup-indicator.active {
+    background: #005EEB;
 }
 
 @keyframes fadeIn {
@@ -794,51 +812,40 @@
 }
 
 @media (max-width: 768px) {
-    .popup-images {
-        flex-direction: column;
-        align-items: center;
-        gap: 20px;
-    }
-    
-    .popup-image {
-        min-width: 320px;
-        max-width: 95%;
-        width: 100%;
-        min-height: 400px;
-        max-height: 600px;
-    }
-    
     .popup-container {
+        width: 420px;
+        height: 550px;
         padding: 20px;
-        margin: 5px;
-        width: 98%;
-        height: 98%;
-        max-width: 100%;
-        max-height: 100%;
+    }
+    
+    .popup-images {
+        height: 450px;
     }
     
     .popup-title {
-        font-size: 28px;
+        font-size: 22px;
     }
 }
 
 @media (max-width: 480px) {
-    .popup-image {
-        min-width: 280px;
-        max-width: 98%;
-        min-height: 350px;
-        max-height: 500px;
+    .popup-container {
+        width: 350px;
+        height: 480px;
+        padding: 15px;
     }
     
-    .popup-container {
-        padding: 15px;
-        margin: 2px;
-        width: 99%;
-        height: 99%;
+    .popup-images {
+        height: 380px;
     }
     
     .popup-title {
-        font-size: 24px;
+        font-size: 20px;
+    }
+    
+    .popup-close {
+        width: 22px;
+        height: 22px;
+        font-size: 12px;
     }
 }
                 </style>
@@ -853,9 +860,14 @@
                 <button id="popup-close" class="popup-close" title="Close">&times;</button>
             </div>
             <div class="popup-images">
-                <img src="/static/pop up images/ad 1.png" alt="Advertisement 1" class="popup-image">
+                <img src="/static/pop up images/ad 1.png" alt="Advertisement 1" class="popup-image active">
                 <img src="/static/pop up images/ad 2.png" alt="Advertisement 2" class="popup-image">
                 <img src="/static/pop up images/ad 3.png" alt="Advertisement 3" class="popup-image">
+            </div>
+            <div class="popup-indicators">
+                <div class="popup-indicator active" data-slide="0"></div>
+                <div class="popup-indicator" data-slide="1"></div>
+                <div class="popup-indicator" data-slide="2"></div>
             </div>
         </div>
     </div>
@@ -1301,28 +1313,74 @@
     document.addEventListener('DOMContentLoaded', function() {
         const popupOverlay = document.getElementById('popup-overlay');
         const popupClose = document.getElementById('popup-close');
+        const images = document.querySelectorAll('.popup-image');
+        const indicators = document.querySelectorAll('.popup-indicator');
+        let currentSlide = 0;
+        let slideInterval;
         
-        // Show popup after 2 seconds
-        setTimeout(function() {
-            popupOverlay.style.display = 'block';
-        }, 2000);
+        function showSlide(index) {
+            images.forEach(img => img.classList.remove('active'));
+            indicators.forEach(ind => ind.classList.remove('active'));
+            images[index].classList.add('active');
+            indicators[index].classList.add('active');
+            currentSlide = index;
+        }
         
-        // Close popup when close button is clicked
-        popupClose.addEventListener('click', function() {
-            popupOverlay.style.display = 'none';
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % images.length;
+            showSlide(currentSlide);
+        }
+        
+        function startSlideshow() {
+            slideInterval = setInterval(nextSlide, 6000);
+        }
+        
+        function stopSlideshow() {
+            clearInterval(slideInterval);
+            slideInterval = null;
+        }
+        
+        indicators.forEach((indicator, index) => {
+            indicator.addEventListener('click', function() {
+                stopSlideshow();
+                showSlide(index);
+                startSlideshow();
+            });
         });
         
-        // Close popup when clicking outside the popup container
+        images.forEach((image, index) => {
+            image.addEventListener('click', function() {
+                if (slideInterval) {
+                    stopSlideshow();
+                    image.style.border = '3px solid #005EEB';
+                } else {
+                    startSlideshow();
+                    image.style.border = '2px solid rgba(0, 94, 235, 0.2)';
+                }
+            });
+        });
+        
+        setTimeout(function() {
+            popupOverlay.style.display = 'block';
+            startSlideshow();
+        }, 2000);
+        
+        popupClose.addEventListener('click', function() {
+            popupOverlay.style.display = 'none';
+            stopSlideshow();
+        });
+        
         popupOverlay.addEventListener('click', function(event) {
             if (event.target === popupOverlay) {
                 popupOverlay.style.display = 'none';
+                stopSlideshow();
             }
         });
         
-        // Close popup when pressing Escape key
         document.addEventListener('keydown', function(event) {
             if (event.key === 'Escape' && popupOverlay.style.display === 'block') {
                 popupOverlay.style.display = 'none';
+                stopSlideshow();
             }
         });
     });
