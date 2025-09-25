@@ -7,7 +7,7 @@ COPY requirements.txt /tmp/
 RUN pip install flask_sqlalchemy cryptography
 RUN pip install Flask
 RUN pip install Werkzeug
-Werkzeug==3.0.1
+
 
 # Copy app code
 COPY . .
