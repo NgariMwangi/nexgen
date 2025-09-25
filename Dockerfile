@@ -3,9 +3,11 @@ FROM tiangolo/uwsgi-nginx-flask:python3.10
 # Copy requirements
 COPY requirements.txt /tmp/
 
-# Install dependencies
-RUN pip install -r /tmp/requirements.txt
+
 RUN pip install flask_sqlalchemy cryptography
+RUN pip install Flask==3.0.0
+RUN pip install Werkzeug==3.0.1
+Werkzeug==3.0.1
 
 # Copy app code
 COPY . .
