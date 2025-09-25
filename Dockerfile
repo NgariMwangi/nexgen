@@ -4,7 +4,7 @@ FROM tiangolo/uwsgi-nginx-flask:python3.10
 COPY requirements.txt /tmp/
 
 
-RUN pip install flask_sqlalchemy cryptography
+# RUN pip install flask_sqlalchemy cryptography
 RUN pip install Flask
 RUN pip install Werkzeug
 
